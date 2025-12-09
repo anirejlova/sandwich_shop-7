@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sandwich_shop/views/app_styles.dart';
+import 'package:sandwich_shop/views/order_screen.dart';
 import 'package:sandwich_shop/views/widgets.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -32,6 +33,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
     setState(() {
       _fontSize = fontSize;
     });
+  }
+
+  void _navigateToOrderScreen() {
+    Navigator.push(
+      context,
+      MaterialPageRoute<void>(
+        builder: (BuildContext context) => const OrderScreen(),
+      ),
+    );
   }
 
   @override
@@ -78,7 +88,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => _navigateToOrderScreen(),
               child: Text('Back to Order', style: AppStyles.normalText),
             ),
           ],
