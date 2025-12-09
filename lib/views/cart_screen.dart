@@ -8,7 +8,7 @@ import 'package:sandwich_shop/repositories/pricing_repository.dart';
 import 'package:sandwich_shop/views/checkout_screen.dart';
 
 class CartScreen extends StatefulWidget {
-  const CartScreen({super.key});
+  const CartScreen({super.key, required Cart cart});
 
   @override
   State<CartScreen> createState() {
@@ -33,7 +33,7 @@ class _CartScreenState extends State<CartScreen> {
     final result = await Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const CheckoutScreen(),
+        builder: (context) => CheckoutScreen(cart: cart),
       ),
     );
 

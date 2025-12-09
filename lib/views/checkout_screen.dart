@@ -6,7 +6,7 @@ import 'package:sandwich_shop/models/sandwich.dart';
 import 'package:sandwich_shop/repositories/pricing_repository.dart';
 
 class CheckoutScreen extends StatefulWidget {
-  const CheckoutScreen({super.key});
+  const CheckoutScreen({super.key, required Cart cart});
 
   @override
   State<CheckoutScreen> createState() => _CheckoutScreenState();
