@@ -57,6 +57,15 @@ class _CartScreenState extends State<CartScreen> {
     }
   }
 
+  void _navigateToOrderScreen() {
+    Navigator.push(
+      context,
+      MaterialPageRoute<void>(
+        builder: (BuildContext context) => OrderScreen(),
+      ),
+    );
+  }
+
   String _getSizeText(bool isFootlong) {
     if (isFootlong) {
       return 'Footlong';
@@ -184,7 +193,7 @@ class _CartScreenState extends State<CartScreen> {
                   ),
                   const SizedBox(height: 20),
                   StyledButton(
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () => _navigateToOrderScreen(),
                     icon: Icons.arrow_back,
                     label: 'Back to Order',
                     backgroundColor: Colors.grey,
